@@ -1,24 +1,35 @@
-const express = require('express');
-const morgan= require('morgan');
-const {createProxyMiddleware} = require("http-proxy-middleware")
+const express = require("express");
+const morgan = require("morgan");
+const { createProxyMiddleware } = require("http-proxy-middleware");
 
 const app = express();
-app.use(morgan("dev"))
+app.use(morgan("dev"));
 
-app.use("/characters",createProxyMiddleware({ // hace que si yo pido info al puerto 8000, se crea un proxy que automaticamente se comunica con el servicio requerido, en este caso con el puerto 8001
-    target:"http://characters:8001",
-    changeOrigin: true
-}) )
-app.use("/films",createProxyMiddleware({ // hace que si yo pido info al puerto 8000, se crea un proxy que automaticamente se comunica con el servicio requerido, en este caso con el puerto 8001
-    target:"http://films:8002",
-    changeOrigin: true
-}) )
-app.use("/planets",createProxyMiddleware({ // hace que si yo pido info al puerto 8000, se crea un proxy que automaticamente se comunica con el servicio requerido, en este caso con el puerto 8001
-    target:"http://planets:8003",
-    changeOrigin: true
-}) )
+app.use(
+  "/characters",
+  createProxyMiddleware({
+    // hace que si yo pido info al puerto 8000, se crea un proxy que automaticamente se comunica con el servicio requerido, en este caso con el puerto 8001
+    target: "http://characters:8001",
+    changeOrigin: true,
+  })
+);
+app.use(
+  "/films",
+  createProxyMiddleware({
+    // hace que si yo pido info al puerto 8000, se crea un proxy que automaticamente se comunica con el servicio requerido, en este caso con el puerto 8001
+    target: "http://films:8002",
+    changeOrigin: true,
+  })
+);
+app.use(
+  "/planets",
+  createProxyMiddleware({
+    // hace que si yo pido info al puerto 8000, se crea un proxy que automaticamente se comunica con el servicio requerido, en este caso con el puerto 8001
+    target: "http://planets:8003",
+    changeOrigin: true,
+  })
+);
 
-
-app.listen(8000, ()=>{
-    console.log("Gateway on port 8000")
-})
+app.listen(8000, () => {
+  console.log("Gateway on port 8000");
+});

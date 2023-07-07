@@ -1,3 +1,3 @@
-module.exports={
-    getPlanets: require("./getPlanets")
-}
+module.exports = {
+  getPlanets: require("./getPlanets"),
+};

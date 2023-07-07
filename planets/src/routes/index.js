@@ -1,8 +1,8 @@
-const {Router} = require("express");
-const controller = require("../controllers/index")
+const { Router } = require("express");
+const controller = require("../controllers/index");
 
-const router=Router()
+const router = Router();
 
-router.get("/", controller.getPlanets  )
+router.get("/", controller.getPlanets);
 
 module.exports = router;

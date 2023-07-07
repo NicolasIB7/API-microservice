@@ -1,8 +1,7 @@
-const films= require("./films.json")
+const films = require("./films.json");
 
 module.exports = {
-    film: async ()=>{
-        return films
-    }
-
-}
+  film: async () => {
+    return films;
+  },
+};

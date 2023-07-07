@@ -1,3 +1,3 @@
-module.exports={
-    getFilms: require("./getFilms")
-}
+module.exports = {
+  getFilms: require("./getFilms"),
+};

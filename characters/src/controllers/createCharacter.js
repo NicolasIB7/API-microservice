@@ -1,3 +1,3 @@
-module.exports= (req,res)=>{
-    res.status(200).send("creando personaje")
-}
+module.exports = (req, res) => {
+  res.status(200).send("creando personaje");
+};
