@@ -24,11 +24,13 @@ app.use(
 app.use(
   "/planets",
   createProxyMiddleware({
-    // hace que si yo pido info al puerto 8000, se crea un proxy que automaticamente se comunica con el servicio requerido, en este caso con el puerto 8001
+    
     target: "http://planets:8003",
     changeOrigin: true,
   })
 );
+
+
 
 app.listen(8000, () => {
   console.log("Gateway on port 8000");
